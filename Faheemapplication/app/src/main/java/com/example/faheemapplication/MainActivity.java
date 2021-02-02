@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_DELAY = 3500; // The time that the splash screen will take to disappear
+    private static int SPLASH_DELAY = 2000; // The time that the splash screen will take to disappear
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
