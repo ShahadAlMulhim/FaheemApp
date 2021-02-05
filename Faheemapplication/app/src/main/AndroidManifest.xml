@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FaheemApplication">
-        <activity android:name=".MainScreen"></activity>
+        <activity android:name=".authintecationActivity"></activity>
+        <activity android:name=".MainScreen" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

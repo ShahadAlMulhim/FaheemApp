@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().hide(); // This will hide the action bar in the screen
+        getSupportActionBar().hide(); // Hide the action bar in the screen
 
         new Handler().postDelayed(new Runnable() {
             @Override

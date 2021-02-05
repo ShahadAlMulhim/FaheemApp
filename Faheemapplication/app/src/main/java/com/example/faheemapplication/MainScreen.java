@@ -3,9 +3,11 @@ package com.example.faheemapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainScreen extends AppCompatActivity {
@@ -14,7 +16,7 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        getSupportActionBar().hide();
+        getSupportActionBar().hide(); // Hide the action bar in the screen
 
         // ** Adding the icons in the buttons **
         // Scan product button
@@ -35,5 +37,19 @@ public class MainScreen extends AppCompatActivity {
         Button gameButton = findViewById(R.id.game);
         gameButton.setCompoundDrawables(null, null, gameDrawable, null);
 
+
+
+
+        // When click on "Scan product" button take the user to authentication activity
+        scanProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                authenticationActivity();
+            }
+        });
+    }
+    public void authenticationActivity(){
+        Intent intent = new Intent(this, authintecationActivity.class); // the intent provide the external class which is "authintecationActivity" to be invoked
+        startActivity(intent);
     }
 }
