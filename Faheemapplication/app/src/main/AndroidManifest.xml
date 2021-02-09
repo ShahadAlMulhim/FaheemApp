@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FaheemApplication">
-        <activity android:name=".authintecationActivity"></activity>
+        <activity android:name=".authenticationOTPActivity"></activity>
+        <activity android:name=".authenticationActivity" />
         <activity android:name=".MainScreen" />
-        <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

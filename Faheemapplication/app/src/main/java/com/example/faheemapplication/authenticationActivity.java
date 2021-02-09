@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class authintecationActivity extends AppCompatActivity {
+public class authenticationActivity extends AppCompatActivity {
 
     EditText phoneInput;
     Button actionButton;
@@ -21,7 +20,7 @@ public class authintecationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authintecation);
+        setContentView(R.layout.activity_authentication);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
 
@@ -65,10 +64,21 @@ public class authintecationActivity extends AppCompatActivity {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
             }
         });
+        Button sendButton = findViewById(R.id.actionButton);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                otpActivity(); // call mainActivity function so when user click the button the mainActivity is opened
+            }
+        });
     }
     public void mainActivity() {
         Intent intent = new Intent(this, MainScreen.class);
         startActivity(intent);
+    }
+    public void otpActivity(){
+        Intent Otpintent = new Intent(this, authenticationOTPActivity.class);
+        startActivity(Otpintent);
     }
     ////
 }

@@ -13,4 +13,5 @@
     <color name="Brown">#A6000000</color>
     <color name="Background">#F6FEFF</color>
     <color name="disableButton">#A8CAC4</color>
+    <color name="grey">#DEDDDD</color>
 </resources>

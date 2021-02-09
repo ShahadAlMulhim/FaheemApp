@@ -18,7 +18,7 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
-        // ** Adding the icons in the buttons **
+        //// ** Adding the icons in the buttons **
         // Scan product button
         Drawable scanProductDrawable = ContextCompat.getDrawable(MainScreen.this,R.drawable.scan_product); // Get the drawable icon
         scanProductDrawable.setBounds(0, 0, 150, 150); // Set the hight and width of the icon
@@ -39,7 +39,7 @@ public class MainScreen extends AppCompatActivity {
 
 
 
-
+        ////
         // When click on "Scan product" button take the user to authentication activity
         scanProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,8 @@ public class MainScreen extends AppCompatActivity {
         });
     }
     public void authenticationActivity(){
-        Intent intent = new Intent(this, authintecationActivity.class); // the intent provide the external class which is "authintecationActivity" to be invoked
+        Intent intent = new Intent(this, authenticationActivity.class); // the intent provide the external class which the "authenticationActivity" be invoked
         startActivity(intent);
     }
+    ////
 }
