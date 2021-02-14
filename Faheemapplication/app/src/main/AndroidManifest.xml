@@ -11,8 +11,8 @@
         android:theme="@style/Theme.FaheemApplication">
         <activity android:name=".authenticationOTPActivity"></activity>
         <activity android:name=".authenticationActivity" />
-        <activity android:name=".MainScreen" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".mainScreen" />
+        <activity android:name=".mainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

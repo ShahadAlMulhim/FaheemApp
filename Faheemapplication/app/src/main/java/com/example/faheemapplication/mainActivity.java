@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class MainActivity extends AppCompatActivity {
+public class mainActivity extends AppCompatActivity {
     private static int SPLASH_DELAY = 1700; // The time that the splash screen will take to disappear
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, MainScreen.class);
+                Intent intent = new Intent(mainActivity.this, mainScreen.class);
                 startActivity(intent);
                 finish();
             }

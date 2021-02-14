@@ -12,17 +12,45 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.quickstart.auth.R;
+import com.google.firebase.quickstart.auth.databinding.ActivityPhoneAuthBinding;
+
+import java.util.concurrent.TimeUnit;
 public class authenticationActivity extends AppCompatActivity {
 
     EditText phoneInput;
     Button actionButton;
+    private FirebaseAuth mAuth;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
         getSupportActionBar().hide(); // Hide the action bar in the screen
-
+        mAuth = FirebaseAuth.getInstance();
 
         ////
         // Make the button disable and enable based on textEdit changes
@@ -52,10 +80,7 @@ public class authenticationActivity extends AppCompatActivity {
                 }
             }
         });
-        ////
 
-
-        ////
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +97,15 @@ public class authenticationActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
     public void mainActivity() {
-        Intent intent = new Intent(this, MainScreen.class);
+        Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }
     public void otpActivity(){

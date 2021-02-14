@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "279336275629",
+    "firebase_url": "https://ourapp-3aad5-default-rtdb.firebaseio.com",
+    "project_id": "ourapp-3aad5",
+    "storage_bucket": "ourapp-3aad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279336275629:android:e8d54d22413f7150998024",
+        "android_client_info": {
+          "package_name": "com.example.faheemapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279336275629-rmht7ss5f8dmdvds5altnpd2t7l4p5tb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.faheemapplication",
+            "certificate_hash": "17be17486291eaf440455e47bb125b1bda028e9b"
+          }
+        },
+        {
+          "client_id": "279336275629-sbgu4a30ks4kt7jb57fjhlm2t4i7kqpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwJ_edHpFIrrb3etCok1CfxMhZXyXhe-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279336275629-sbgu4a30ks4kt7jb57fjhlm2t4i7kqpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
