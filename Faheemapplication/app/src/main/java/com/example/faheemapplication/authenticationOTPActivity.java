@@ -9,8 +9,7 @@ import android.text.Selection;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ImageButton;
-
-<<<<<<< HEAD
+import android.widget.Button;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
@@ -21,9 +20,8 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
-=======
 import com.chaos.view.PinView;
->>>>>>> 4fab9c442b591556c109d04d62a0879b2070b850
+
 
 public class authenticationOTPActivity extends AppCompatActivity {
 

@@ -26,7 +26,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
         });
     }
     public void mainActivity() {
-        Intent intent = new Intent(this, MainScreen.class);
+        Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }
 }
