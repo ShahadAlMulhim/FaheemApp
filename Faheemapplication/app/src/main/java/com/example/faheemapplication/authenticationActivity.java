@@ -37,25 +37,6 @@ public class authenticationActivity extends AppCompatActivity {
     EditText phoneInput;
     Button actionButton;
 
-    private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
-
-    private static final int STATE_INITIALIZED = 1;
-    private static final int STATE_CODE_SENT = 2;
-    private static final int STATE_VERIFY_FAILED = 3;
-    private static final int STATE_VERIFY_SUCCESS = 4;
-    private static final int STATE_SIGNIN_FAILED = 5;
-    private static final int STATE_SIGNIN_SUCCESS = 6;
-
-    // [START declare_auth]
-    private FirebaseAuth mAuth;
-    // [END declare_auth]
-
-    private boolean mVerificationInProgress = false;
-    private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
-
-    private ActivityPhoneAuthBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +44,6 @@ public class authenticationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_authentication);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
-        // [START initialize_auth]
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
 
         // Make the button disable and enable based on textEdit changes
         phoneInput = (EditText) findViewById(R.id.editTextPhone);
@@ -95,10 +72,9 @@ public class authenticationActivity extends AppCompatActivity {
                 }
             }
         });
-        ////
 
 
-        ////
+
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -123,5 +99,5 @@ public class authenticationActivity extends AppCompatActivity {
         Intent Otpintent = new Intent(this, authenticationOTPActivity.class);
         startActivity(Otpintent);
     }
-    ////
+
 }
