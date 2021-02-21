@@ -3,13 +3,13 @@
 <item android:state_enabled="true"> <!-- the color when the button is enabled -->
     <shape android:shape="rectangle">
         <solid android:color="@color/DarkGreen" />
-        <corners android:radius="30dp"/>
+        <corners android:radius="25dp"/>
     </shape>
 </item>
 <item android:state_enabled="false"> <!-- the color when the button is disabled -->
     <shape android:shape="rectangle">
         <solid android:color="@color/disableButton" />
-        <corners android:radius="30dp"/>
+        <corners android:radius="25dp"/>
     </shape>
 </item>
 </selector>

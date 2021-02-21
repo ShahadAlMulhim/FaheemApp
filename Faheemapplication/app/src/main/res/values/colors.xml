@@ -13,5 +13,6 @@
     <color name="Brown">#A6000000</color>
     <color name="Background">#F6FEFF</color>
     <color name="disableButton">#A8CAC4</color>
-    <color name="grey">#DEDDDD</color>
+    <color name="Lightgrey">#DEDDDD</color>
+    <color name="Darkgrey">#59000000</color>
 </resources>

@@ -172,7 +172,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.05"
-        app:lineColor="@color/grey"
+        app:lineColor="@color/Darkgrey"
         app:viewType="rectangle"
         android:cursorVisible="true"
         android:inputType="number"
