@@ -82,7 +82,7 @@
         android:layout_marginTop="52dp"
         android:background="#F6FEFF"
         android:contentDescription="Background"
-        app:tint="#65FFFFFF"
+        android:tint="#4FFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
