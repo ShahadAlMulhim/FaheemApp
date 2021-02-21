@@ -8,15 +8,19 @@
     android:background="@color/Background">
 
 
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="273dp"
         android:layout_height="220dp"
         android:layout_marginTop="36dp"
+        android:layout_marginBottom="430dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cloud"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.844"
+        app:srcCompat="@drawable/cloud" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -30,18 +34,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cloud" />
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/cloud" /><![CDATA[
+
+
+
+
+
+
+
+    app:srcCompat="@drawable/close_button" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="202dp"
         android:layout_height="166dp"
+        android:layout_marginTop="330dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587"
+        app:layout_constraintVertical_bias="0.382"
         app:srcCompat="@drawable/cloud" />
 
     <TextView
@@ -59,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.819" />
 
     <TextView
         android:id="@+id/textView6"
@@ -77,19 +115,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/closeButton"
-        android:layout_width="56dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.98"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/close_button" />
-
     <Button
         android:id="@+id/scanProduct"
         android:layout_width="217dp"
@@ -106,20 +131,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/mainScreen"
         android:layout_width="217dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
-        android:text="القائمة الرئيسية"
-        android:textSize="20dp"
-        android:fontFamily="@font/pnumedium"
-        android:textColor="@color/DarkGreen"
         android:background="@drawable/main_screen_button"
-        android:paddingBottom="6dp"
+        android:fontFamily="@font/pnumedium"
         android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="القائمة الرئيسية"
+        android:textColor="@color/DarkGreen"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/scanProduct"
         app:layout_constraintHorizontal_bias="0.0"
@@ -139,6 +164,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/check" />
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="123dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/close_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

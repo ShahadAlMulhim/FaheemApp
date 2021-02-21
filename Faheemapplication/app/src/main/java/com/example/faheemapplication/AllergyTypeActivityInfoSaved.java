@@ -3,7 +3,6 @@ package com.example.faheemapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,7 @@ public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
         setContentView(R.layout.activity_allergy_type_info_saved);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
-        // When click on close button take the user back to the main screen
+        // When click on back button take the user back to the main screen
         ImageView closeButton = findViewById(R.id.closeButton);
         Button mainScreenButton = findViewById(R.id.mainScreen);
         closeButton.setOnClickListener(new View.OnClickListener() {
@@ -32,9 +31,6 @@ public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
-                if (v.isPressed()) {
-                    mainScreenButton.setTextColor(Color.parseColor("#FFFFFFFF"));
-                }
             }
         });
     }

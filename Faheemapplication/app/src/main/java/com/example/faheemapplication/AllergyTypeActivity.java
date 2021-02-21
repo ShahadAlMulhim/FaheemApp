@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewParent;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -30,7 +29,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                infoSavedActivity(); // call mainActivity function so when user click the button the mainActivity is opened
+                AllergyTypeInfoSavedActivity(); // call mainActivity function so when user click the button the mainActivity is opened
             }
         });
     }
@@ -38,7 +37,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }
-    public void infoSavedActivity(){
+    public void AllergyTypeInfoSavedActivity(){
         Intent intent = new Intent(this, AllergyTypeActivityInfoSaved.class);
         startActivity(intent);
     }
