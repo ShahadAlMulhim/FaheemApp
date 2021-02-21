@@ -16,9 +16,9 @@
         android:tint="#65FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.509"
         app:srcCompat="@drawable/land" />
 
     <ImageView
@@ -76,26 +76,27 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="158dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/phone_input"
         android:ems="10"
+        android:fontFamily="@font/pnumedium"
+        android:hint="5********"
         android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345"
-        android:maxLines="1"
         android:lines="1"
         android:maxLength="14"
-        android:fontFamily="@font/pnumedium"
-        android:textSize="25dp"
+        android:maxLines="1"
+        android:paddingBottom="40dp"
         android:textColor="@color/Brown"
-        android:paddingBottom="40dp" />
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/actionButton"
@@ -132,5 +133,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <EditText
+        android:id="@+id/editTextCode"
+        android:layout_width="141dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/phone_input"
+        android:ems="10"
+        android:fontFamily="@font/pnumedium"
+        android:hint="+966"
+        android:inputType="phone"
+        android:lines="1"
+        android:maxLength="14"
+        android:maxLines="1"
+        android:paddingBottom="40dp"
+        android:textColor="@color/Brown"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.362" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
