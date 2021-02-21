@@ -58,7 +58,7 @@ public class authenticationActivity extends AppCompatActivity {
 
         actionButton.setEnabled(false);
 
-        //  when clicking on
+
         Button sendButton = findViewById(R.id.actionButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
