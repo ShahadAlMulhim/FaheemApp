@@ -9,13 +9,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class mainScreen extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private FirebaseUser mCurrentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         getSupportActionBar().hide(); // Hide the action bar in the screen
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        mCurrentUser = mAuth.getCurrentUser();
 
         //// ** Adding the icons in the buttons **
         // Scan product button
@@ -43,13 +52,20 @@ public class mainScreen extends AppCompatActivity {
         scanProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                authenticationActivity();
+                if(mCurrentUser == null){
+                    Intent authIntent = new Intent(mainScreen.this, authenticationActivity.class);
+                    authIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    authIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(authIntent);
+                    finish();
+                } else{
+                    Intent intent = new Intent(mainScreen.this, checkProductActivity.class); // the intent provide the external class which the "authenticationActivity" be invoked
+                    startActivity(intent);
+                }
             }
         });
     }
-    public void authenticationActivity(){
-        Intent intent = new Intent(this, authenticationActivity.class); // the intent provide the external class which the "authenticationActivity" be invoked
-        startActivity(intent);
-    }
-    ////
+
+
+
 }

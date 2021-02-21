@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FaheemApplication">
+<<<<<<< HEAD
         <activity android:name=".AllergyTypeActivityInfoSaved"></activity>
+=======
+        <activity android:name=".checkProductActivity"></activity>
+>>>>>>> 592a7e5d39962668f1cc973806834c601cb41a8a
         <activity android:name=".AllergyTypeActivity" />
         <activity android:name=".authenticationOTPActivity" />
         <activity android:name=".authenticationActivity" />

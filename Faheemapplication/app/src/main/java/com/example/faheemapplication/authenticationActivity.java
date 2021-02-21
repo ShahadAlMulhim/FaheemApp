@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,34 +29,18 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-
 import java.util.concurrent.TimeUnit;
 
 
 public class authenticationActivity extends AppCompatActivity {
-
-    EditText phoneInput;
-    Button actionButton;
-
-    private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
-
-    private static final int STATE_INITIALIZED = 1;
-    private static final int STATE_CODE_SENT = 2;
-    private static final int STATE_VERIFY_FAILED = 3;
-    private static final int STATE_VERIFY_SUCCESS = 4;
-    private static final int STATE_SIGNIN_FAILED = 5;
-    private static final int STATE_SIGNIN_SUCCESS = 6;
-
-    // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
-
-    private boolean mVerificationInProgress = false;
-    private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
+    private FirebaseUser mCurrentUser;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
-    private ActivityPhoneAuthBinding mBinding;
+   private EditText phoneInput;
+   private EditText CountryCode;
+   private Button actionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,42 +48,66 @@ public class authenticationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_authentication);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
-        // [START initialize_auth]
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
-
+        mCurrentUser = mAuth.getCurrentUser();
         // Make the button disable and enable based on textEdit changes
         phoneInput = (EditText) findViewById(R.id.editTextPhone);
+        CountryCode = (EditText) findViewById(R.id.editTextCode);
         actionButton = (Button) findViewById(R.id.actionButton);
-        actionButton.setEnabled(false); // By default make the button disable until the condition in the if statement is triggered
 
-        phoneInput.setText("+966 "); // set the country code in the phone field to be fixed and uneditable
-        Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // set the insertion point to a specific location within a phone field
+        actionButton.setEnabled(false);
 
-        phoneInput.addTextChangedListener(new TextWatcher() { // Use TextWatcher method to track any changes in the textEdit
+        //  when clicking on
+        Button sendButton = findViewById(R.id.actionButton);
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().length() == 14){
+            public void onClick(View v) {
+             String Country=CountryCode.getText().toString();
+             String Phone=phoneInput.getText().toString();
+
+
+                String completePhone ="+"+Country+Phone;
+                if (completePhone.length()==14){
                     actionButton.setEnabled(true);
                 }
-                else
-                    actionButton.setEnabled(false);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(!s.toString().startsWith("+966 ")){
-                    phoneInput.setText("+966 ");
-                    Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // Set the insertion point after the 5 character
+
+                if (mCurrentUser == null){
+                   PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                         completePhone,
+                           120,
+                           TimeUnit.SECONDS,
+                           authenticationActivity.this,
+                           mCallbacks
+                   ); //send otp
+
+                    Intent otpIntent = new Intent(authenticationActivity.this,authenticationOTPActivity.class);
+                    startActivity(otpIntent);
+                    finish();
                 }
             }
         });
-        ////
 
+        mCallbacks= new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
-        ////
+            }
+
+            @Override
+            public void onVerificationFailed(@NonNull FirebaseException e) {
+
+            }
+            @Override
+            public void onCodeSent( String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(s, forceResendingToken);
+                Intent otpIntent = new Intent(authenticationActivity.this, authenticationOTPActivity.class);
+                otpIntent.putExtra("AuthCredentials",s);
+                startActivity(otpIntent);
+            } //when sent otp go to OTP page
+
+        };
+
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -107,21 +116,24 @@ public class authenticationActivity extends AppCompatActivity {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
             }
         });
-        Button sendButton = findViewById(R.id.actionButton);
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                otpActivity(); // call mainActivity function so when user click the button the mainActivity is opened
-            }
-        });
     }
-    public void mainActivity() {
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mCurrentUser != null) {
+            Intent homeIntent = new Intent(authenticationActivity.this, checkProductActivity.class);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(homeIntent);
+            finish();
+        }
+    }
+
+        public void mainActivity() {
         Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }
-    public void otpActivity(){
-        Intent Otpintent = new Intent(this, authenticationOTPActivity.class);
-        startActivity(Otpintent);
-    }
-    ////
+
+
 }
