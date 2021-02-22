@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +42,6 @@ public class authenticationActivity extends AppCompatActivity {
    private EditText CountryCode;
    private Button actionButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class authenticationActivity extends AppCompatActivity {
         CountryCode = (EditText) findViewById(R.id.editTextCode);
         actionButton = (Button) findViewById(R.id.actionButton);
 
-        actionButton.setEnabled(false);
+//        actionButton.setEnabled(false);
 
 
         Button sendButton = findViewById(R.id.actionButton);
@@ -66,11 +66,11 @@ public class authenticationActivity extends AppCompatActivity {
              String Country=CountryCode.getText().toString();
              String Phone=phoneInput.getText().toString();
 
+             String completePhone ="+"+Country+Phone;
 
-                String completePhone ="+"+Country+Phone;
-                if (completePhone.length()==14){
-                    actionButton.setEnabled(true);
-                }
+//                if (completePhone.length()==14){
+//                    actionButton.setEnabled(true);
+//                }
 
                 if (mCurrentUser == null){
                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -91,7 +91,7 @@ public class authenticationActivity extends AppCompatActivity {
         mCallbacks= new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
+                signInWithPhoneAuthCredential(phoneAuthCredential);
             }
 
             @Override
@@ -135,5 +135,32 @@ public class authenticationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void sendUSerToCheckproduct(){
+        Intent homeIntent = new Intent(authenticationActivity.this, checkProductActivity.class);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(homeIntent);
+        finish();
+    }
+
+    public void allergyTypeActivity(){
+        Intent intent = new Intent(this, AllergyTypeActivity.class);
+        startActivity(intent);
+    }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        allergyTypeActivity();
+//                        FirebaseUser mCurrentUser = task.getResult().getUser();
+                    } else {
+                        if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                            // The verification code entered was invalid
+
+                        }
+                    }
+                });
+    }
 
 }
