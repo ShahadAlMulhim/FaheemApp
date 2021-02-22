@@ -66,7 +66,7 @@ public class authenticationActivity extends AppCompatActivity {
              String Country=CountryCode.getText().toString();
              String Phone=phoneInput.getText().toString();
 
-             String completePhone ="+"+Country+Phone;
+             String completePhone =Country+Phone;
 
 //                if (completePhone.length()==14){
 //                    actionButton.setEnabled(true);

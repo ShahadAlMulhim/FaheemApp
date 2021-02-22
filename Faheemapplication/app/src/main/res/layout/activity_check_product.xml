@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.62" />
 
     <ImageButton
         android:id="@+id/backButton"
@@ -99,16 +99,23 @@
 <!--added button and textviwe-->
     <Button
         android:id="@+id/scanBtn"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:layout_centerInParent="true"
-        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="109dp"
+        android:layout_marginRight="109dp"
+        android:background="@drawable/action_button"
+        android:fontFamily="@font/pnumedium"
+        android:hint="sendOTP"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:text="ابدأ"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="247dp" />
+        android:textColor="@color/white"
+        android:textSize="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.525"  />
 
     <TextView
         android:id="@+id/message"
