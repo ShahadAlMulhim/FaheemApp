@@ -86,7 +86,7 @@ public class authenticationActivity extends AppCompatActivity {
             public void onClick(View v) {
              String Country=CountryCode.getText().toString();
              String Phone=phoneInput.getText().toString();
-             String completePhone ="+"+Country+Phone;
+             String completePhone =Country+Phone;
 
                 if (mCurrentUser == null){
                    PhoneAuthProvider.getInstance().verifyPhoneNumber(

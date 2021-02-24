@@ -125,7 +125,7 @@ public class checkProductActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) { // to query foods table
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) { //start for loop
-                                    if(snapshot.child("barcode").getValue().equals("199234")){ // 1234=result.grtConntnt(); يعني قراء الباركود وهو موجود في الداتابيس
+                                    if(snapshot.child("barcode").getValue().equals(result.getContents())){ //read barcore and get result
                                         String  productName = snapshot.child("name").getValue().toString();// get the name of a given food barcode
                                         childInfo.addValueEventListener(new ValueEventListener() { // a reference to child_info table
                                             @Override
