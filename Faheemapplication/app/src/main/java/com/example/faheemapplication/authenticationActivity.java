@@ -56,8 +56,29 @@ public class authenticationActivity extends AppCompatActivity {
         CountryCode = (EditText) findViewById(R.id.editTextCode);
         actionButton = (Button) findViewById(R.id.actionButton);
 
-//        actionButton.setEnabled(false);
+        CountryCode.setText("+966"); // set the country code in the phone field to be fixed and uneditable
+        Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // set the insertion point to a specific location within a phone field
+        actionButton.setEnabled(false);
 
+        phoneInput.addTextChangedListener(new TextWatcher() { // Use TextWatcher method to track any changes in the textEdit
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().equals("")){
+                    actionButton.setEnabled(false);
+                }
+                else
+                    actionButton.setEnabled(true);
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(!s.toString().startsWith("+966")){
+                    CountryCode.setText("+966");
+                    Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // Set the insertion point after the 5 character
+                }
+            }
+        });
 
         Button sendButton = findViewById(R.id.actionButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +86,7 @@ public class authenticationActivity extends AppCompatActivity {
             public void onClick(View v) {
              String Country=CountryCode.getText().toString();
              String Phone=phoneInput.getText().toString();
-
              String completePhone ="+"+Country+Phone;
-
-//                if (completePhone.length()==14){
-//                    actionButton.setEnabled(true);
-//                }
 
                 if (mCurrentUser == null){
                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
