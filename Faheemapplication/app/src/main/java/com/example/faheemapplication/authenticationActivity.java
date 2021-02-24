@@ -58,7 +58,7 @@ public class authenticationActivity extends AppCompatActivity {
 
         CountryCode.setText("+966"); // set the country code in the phone field to be fixed and uneditable
         Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // set the insertion point to a specific location within a phone field
-        actionButton.setEnabled(false);
+        actionButton.setEnabled(false); // set the buttons disabled by default
 
         phoneInput.addTextChangedListener(new TextWatcher() { // Use TextWatcher method to track any changes in the textEdit
             @Override
@@ -80,8 +80,8 @@ public class authenticationActivity extends AppCompatActivity {
             }
         });
 
-        Button sendButton = findViewById(R.id.actionButton);
-        sendButton.setOnClickListener(new View.OnClickListener() {
+
+        actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              String Country=CountryCode.getText().toString();
