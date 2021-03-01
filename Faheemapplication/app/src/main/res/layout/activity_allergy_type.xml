@@ -91,8 +91,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.013" />
 
-    <Button
-        android:id="@+id/button1"
+    <CheckBox
+        android:id="@+id/checkbox1"
         android:layout_width="162dp"
         android:layout_height="57dp"
         android:layout_marginTop="123dp"
@@ -105,15 +105,17 @@
         android:text="الحليب"
         android:textColor="@color/Brown"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox2"
+        app:layout_constraintEnd_toStartOf="@+id/checkbox2"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/checkbox2"
+        app:layout_constraintVertical_bias="1.0"
+        />
 
-    <Button
-        android:id="@+id/button2"
+    <CheckBox
+        android:id="@+id/checkbox2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="191dp"
@@ -125,9 +127,10 @@
         android:paddingTop="7dp"
         android:paddingRight="13dp"
         android:paddingBottom="7dp"
-        android:text="الفول السوداني"
+        android:text="فول الصويا"
         android:textColor="@color/Brown"
         android:textSize="24dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -135,8 +138,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.795" />
 
-    <Button
-        android:id="@+id/button3"
+    <CheckBox
+        android:id="@+id/checkbox3"
         android:layout_width="165dp"
         android:layout_height="58dp"
         android:layout_marginTop="38dp"
@@ -149,15 +152,17 @@
         android:text="البيض"
         android:textColor="@color/Brown"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="@+id/button1"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox4"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox1"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox1"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox1"
+        app:layout_constraintVertical_bias="0.0"
+        />
 
-    <Button
-        android:id="@+id/button4"
+    <CheckBox
+        android:id="@+id/checkbox4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
@@ -170,15 +175,17 @@
         android:text="القمح"
         android:textColor="@color/Brown"
         android:textSize="24dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox2"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox2"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox2"
+        app:layout_constraintVertical_bias="0.0"
+        />
 
-    <Button
-        android:id="@+id/button5"
+    <CheckBox
+        android:id="@+id/checkbox5"
         android:layout_width="166dp"
         android:layout_height="57dp"
         android:layout_marginTop="40dp"
@@ -191,15 +198,17 @@
         android:text="المكسرات"
         android:textColor="@color/Brown"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox6"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox3"
         app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox3"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox3"
+        app:layout_constraintVertical_bias="1.0"
+        />
 
-    <Button
-        android:id="@+id/button6"
+    <CheckBox
+        android:id="@+id/checkbox6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
@@ -213,12 +222,14 @@
         android:text="السمك"
         android:textColor="@color/Brown"
         android:textSize="24dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox4"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox4"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox4"
+        app:layout_constraintVertical_bias="0.0"
+        />
 
     <Button
         android:id="@+id/actionButton"
