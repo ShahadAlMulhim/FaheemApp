@@ -69,43 +69,32 @@ public class AllergyTypeActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // AllergyTypeInfoSavedActivity(); // call mainActivity function so when user click the button the mainActivity is opened
                 if (checkbox1.isChecked()){
                     allergyType.setAllergy1(v1);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
                 if (checkbox2.isChecked()){
                     allergyType.setAllergy2(v2);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
                 if (checkbox3.isChecked()){
                     allergyType.setAllergy3(v3);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
                 if (checkbox4.isChecked()){
                     allergyType.setAllergy4(v4);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
                 if (checkbox5.isChecked()){
                     allergyType.setAllergy5(v5);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
                 if (checkbox6.isChecked()){
                     allergyType.setAllergy6(v6);
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }else {
-                    //
                 }
+                Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
+                startActivity(intent);
             }
         });
     }
@@ -113,8 +102,4 @@ public class AllergyTypeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }
-    /* public void AllergyTypeInfoSavedActivity(){
-        Intent intent = new Intent(this, AllergyTypeActivityInfoSaved.class);
-        startActivity(intent);
-    } */
 }
