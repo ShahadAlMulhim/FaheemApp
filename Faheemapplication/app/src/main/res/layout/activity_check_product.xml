@@ -7,7 +7,7 @@
     tools:context=".checkProductActivity"
     android:background="@color/Background">
 
-    <Button
+    <!-- <Button
         android:id="@+id/actionButton2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
-
+ -->
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -96,32 +96,11 @@
         app:srcCompat="@drawable/cloud" />
 
 
-<!--added button and textviwe-->
-    <Button
-        android:id="@+id/scanBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="109dp"
-        android:layout_marginRight="109dp"
-        android:background="@drawable/action_button"
-        android:fontFamily="@font/pnumedium"
-        android:hint="sendOTP"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:text="ابدأ"
-        android:textColor="@color/white"
-        android:textSize="26dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525"  />
 
     <TextView
         android:id="@+id/message"
         android:layout_width="260dp"
         android:layout_height="60dp"
-        android:layout_below="@id/scanBtn"
         android:layout_centerInParent="true"
         android:layout_margin="50dp"
         android:gravity="center_horizontal"
@@ -133,6 +112,5 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="360dp" />
-<!--  end  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

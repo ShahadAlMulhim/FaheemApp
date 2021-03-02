@@ -56,8 +56,8 @@ public class authenticationActivity extends AppCompatActivity {
         CountryCode = (EditText) findViewById(R.id.editTextCode);
         actionButton = (Button) findViewById(R.id.actionButton);
 
-        CountryCode.setText("+966"); // set the country code in the phone field to be fixed and uneditable
-        Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // set the insertion point to a specific location within a phone field
+        CountryCode.setText("+966 "); // set the country code in the phone field to be fixed and uneditable
+        Selection.setSelection(CountryCode.getText(), CountryCode.getText().length()); // set the insertion point to a specific location within a phone field
         actionButton.setEnabled(false); // set the buttons disabled by default
 
         phoneInput.addTextChangedListener(new TextWatcher() { // Use TextWatcher method to track any changes in the textEdit
@@ -73,9 +73,9 @@ public class authenticationActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable s) {
-                if(!s.toString().startsWith("+966")){
-                    CountryCode.setText("+966");
-                    Selection.setSelection(phoneInput.getText(), phoneInput.getText().length()); // Set the insertion point after the 5 character
+                if(!s.toString().startsWith("+966 ")){
+                    CountryCode.setText("+966 ");
+                    Selection.setSelection(CountryCode.getText(), CountryCode.getText().length()); // Set the insertion point after the 5 character
                 }
             }
         });

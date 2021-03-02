@@ -27,7 +27,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("child_info").child("typeOfAllaregy");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("child_info");
         AllergyType allergyType = new AllergyType();
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
@@ -94,6 +94,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
                     reference.child(String.valueOf(i+1)).setValue(allergyType);
                 }
                 Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

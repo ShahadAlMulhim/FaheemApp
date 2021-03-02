@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Button;
@@ -101,7 +103,8 @@ public class authenticationOTPActivity extends AppCompatActivity {
                     } else {
                         if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                             mOtpFeedback.setVisibility(View.VISIBLE);
-                            mOtpFeedback.setText("حدث خطأ أعد المحاولة");
+                            mOtpFeedback.setText("الرجاء ادخال رقم تحقق صالح مرسل إليك!");
+                            mOtpFeedback.setGravity(Gravity.CENTER);
                             // The verification code entered was invalid
 
                         }

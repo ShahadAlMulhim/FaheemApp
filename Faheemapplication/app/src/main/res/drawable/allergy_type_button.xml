@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true"> <!-- the color when the button is enabled -->
+    <item android:state_checked="true"> <!-- the color when the button is enabled -->
         <shape android:shape="rectangle">
             <solid android:color="@color/LightGreen" />
             <corners android:radius="5dp"/>
         </shape>
     </item>
-    <item android:state_pressed="false"> <!-- the color when the button is disabled -->
+    <item android:state_checked="false"> <!-- the color when the button is disabled -->
         <shape android:shape="rectangle">
             <solid android:color="@color/white" />
             <stroke android:color="@color/LightGreen" android:width="2dp"/>

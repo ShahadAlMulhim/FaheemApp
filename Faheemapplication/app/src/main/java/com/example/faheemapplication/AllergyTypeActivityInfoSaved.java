@@ -20,6 +20,7 @@ public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
 
         // When click on back button take the user back to the main screen
         ImageView closeButton = findViewById(R.id.closeButton);
+        Button scanProductButton = findViewById(R.id.scanProduct);
         Button mainScreenButton = findViewById(R.id.mainScreen);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +34,20 @@ public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
             }
         });
+        scanProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CaptureProduct();
+            }
+        });
     }
 
     public void mainActivity() {
         Intent intent = new Intent(this, mainScreen.class);
+        startActivity(intent);
+    }
+    public void CaptureProduct(){
+        Intent intent = new Intent(this, CaptureAct.class);
         startActivity(intent);
     }
 }

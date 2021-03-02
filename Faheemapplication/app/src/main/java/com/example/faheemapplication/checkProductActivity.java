@@ -42,7 +42,7 @@ public class checkProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_product);
 
-        logout = (Button) findViewById(R.id.actionButton2);
+        // logout = (Button) findViewById(R.id.actionButton2);
         actionButton = (Button) findViewById(R.id.actionButton);
 
         // Initialize Firebase Auth
@@ -50,13 +50,13 @@ public class checkProductActivity extends AppCompatActivity {
         mCurrentUser = mAuth.getCurrentUser();
 
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        /* logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
                 sendUserToMaikscreen();
                 }
-        });
+        }); */
 
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
@@ -67,17 +67,17 @@ public class checkProductActivity extends AppCompatActivity {
             }
         });
 
-        scanBtn = findViewById(R.id.scanBtn);
+        // scanBtn = findViewById(R.id.scanBtn);
         scanBtn.setOnClickListener(this::onClick);
     }
 
-    private void sendUserToMaikscreen(){
+    /* private void sendUserToMaikscreen(){
         Intent AuthIntent = new Intent(checkProductActivity.this, mainScreen.class);
         AuthIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         AuthIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(AuthIntent);
         finish();
-    }
+    } */
 
     public void mainActivity() {
         Intent intent = new Intent(this, mainScreen.class);
@@ -165,7 +165,7 @@ public class checkProductActivity extends AppCompatActivity {
                                         TextView textView = (TextView)findViewById(R.id.message);
                                         textView.setTextColor(Color.WHITE);
                                         textView.setBackgroundColor(Color.parseColor("#ffcc29"));
-                                        textView.setText("هذا المنتج غير موجود في الداتابيس لدينا");
+                                        textView.setText("هذا المنتج غير متوفر لدينا");
 
                                         //Log.d("","the given barcode aint exit in our database"); // barcode not in the database
                                     }
