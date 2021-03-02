@@ -64,8 +64,15 @@ public class mainScreen extends AppCompatActivity {
                 }
             }
         });
+        storyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StoryActivity();
+            }
+        });
     }
-
-
-
+    public void StoryActivity(){
+        Intent intent = new Intent(this, StoryActivity.class);
+        startActivity(intent);
+    }
 }
