@@ -70,9 +70,19 @@ public class mainScreen extends AppCompatActivity {
                 StoryActivity();
             }
         });
+        gameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameActivity();
+            }
+        });
     }
-    public void StoryActivity(){
+    public void StoryActivity(){ // Open story activity
         Intent intent = new Intent(this, StoryActivity.class);
+        startActivity(intent);
+    }
+    public void gameActivity(){ // Open game activity
+        Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
 }

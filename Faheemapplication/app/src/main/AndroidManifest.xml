@@ -23,7 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FaheemApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".StoryActivity"></activity>
+        <activity android:name=".GameActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".StoryActivity" />
         <activity android:name=".AllergyTypeActivityInfoSaved" />
         <activity
             android:name=".checkProductActivity"
@@ -43,7 +44,7 @@
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>
