@@ -41,6 +41,8 @@ public class authenticationOTPActivity extends AppCompatActivity {
     private FirebaseUser mCurrentUser;
     private String mAuthVerificationId;
     private TextView mOtpFeedback;
+    PinView OTPCode;
+    Button verifyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +56,8 @@ public class authenticationOTPActivity extends AppCompatActivity {
         mAuthVerificationId=getIntent().getStringExtra("AuthCredentials");
 
         mOtpFeedback=findViewById(R.id.textView5);
-        Button verifyButton = findViewById(R.id.actionButton);
-        PinView OTPCode = findViewById(R.id.OTP_Pin);
+        verifyButton = findViewById(R.id.actionButton);
+        OTPCode = findViewById(R.id.OTP_Pin);
 
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);

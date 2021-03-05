@@ -16,4 +16,5 @@
     <color name="Lightgrey">#DEDDDD</color>
     <color name="Darkgrey">#59000000</color>
     <color name="Error">#FE7A7A</color>
+    <color name="ErrorLight">#F5C6C6</color>
 </resources>

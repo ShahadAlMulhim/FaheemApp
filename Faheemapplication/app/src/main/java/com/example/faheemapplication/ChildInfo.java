@@ -1,31 +1,34 @@
 package com.example.faheemapplication;
 
 
-import java.util.ArrayList;
-
 public class ChildInfo {
-    private String UserId;
-    private ArrayList<String> Checkboxes;
+    String UserId;
+    AllergyType typeOfAllergy;
 
 
-    public ChildInfo(String userId, ArrayList<String> checkboxes) {
+    public ChildInfo(){
+    }
+
+    public ChildInfo(String userId, AllergyType typeOfAllergy) {
         UserId = userId;
-        Checkboxes = checkboxes;
+        this.typeOfAllergy = typeOfAllergy;
     }
 
     public String getUserId() {
+
         return UserId;
     }
 
     public void setUserId(String userId) {
+
         UserId = userId;
     }
 
-    public ArrayList<String> getCheckboxes() {
-        return Checkboxes;
+    public AllergyType gettypeOfAllergy() {
+        return typeOfAllergy;
     }
 
-    public void setCheckboxes(ArrayList<String> checkboxes) {
-        Checkboxes = checkboxes;
+    public void settypeOfAllergy(AllergyType typeOfAllergy) {
+        this.typeOfAllergy = typeOfAllergy;
     }
 }
