@@ -15,4 +15,5 @@
     <color name="disableButton">#A8CAC4</color>
     <color name="Lightgrey">#DEDDDD</color>
     <color name="Darkgrey">#59000000</color>
+    <color name="Error">#FE7A7A</color>
 </resources>

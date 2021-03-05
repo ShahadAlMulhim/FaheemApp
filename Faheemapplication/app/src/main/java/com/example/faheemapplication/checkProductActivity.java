@@ -7,14 +7,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.Selection;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,13 +24,17 @@ import com.google.zxing.integration.android.IntentResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
+
 public class checkProductActivity extends AppCompatActivity {
 
-    private Button actionButton;
+    Button actionButton;
     private Button logout;
-    Button scanBtn;
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
+    // ChildInfo info;
+    // DatabaseReference Reference;
+
 
 
     @Override
@@ -42,21 +42,29 @@ public class checkProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_product);
 
-        // logout = (Button) findViewById(R.id.actionButton2);
+        logout = (Button) findViewById(R.id.actionButton2);
         actionButton = (Button) findViewById(R.id.actionButton);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
 
+        // Reference = FirebaseDatabase.getInstance().getReference("child_info");
 
-        /* logout.setOnClickListener(new View.OnClickListener() {
+        // AllergyType allergyType = new AllergyType();
+        // String id = Reference.push().getKey();
+        // ArrayList<String> checkboxes= info.getCheckboxes();
+       // info = new ChildInfo(id, checkboxes);
+
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
                 sendUserToMaikscreen();
                 }
-        }); */
+        });
 
         // When click on back button take the user back to the main screen
         ImageButton backButton = findViewById(R.id.backButton);
@@ -68,16 +76,16 @@ public class checkProductActivity extends AppCompatActivity {
         });
 
         // scanBtn = findViewById(R.id.scanBtn);
-        scanBtn.setOnClickListener(this::onClick);
+       // scanBtn.setOnClickListener(this::onClick);
     }
 
-    /* private void sendUserToMaikscreen(){
+    private void sendUserToMaikscreen(){
         Intent AuthIntent = new Intent(checkProductActivity.this, mainScreen.class);
         AuthIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         AuthIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(AuthIntent);
         finish();
-    } */
+    }
 
     public void mainActivity() {
         Intent intent = new Intent(this, mainScreen.class);
@@ -91,7 +99,7 @@ public class checkProductActivity extends AppCompatActivity {
 
     private void scanCode(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null){// User is signed in
+        if(user!=null ){// User is signed in
             IntentIntegrator integrator = new IntentIntegrator(this);
             integrator.setCaptureActivity(CaptureAct.class);
             integrator.setOrientationLocked(false);

@@ -1,24 +1,31 @@
 package com.example.faheemapplication;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class AllergyTypeActivity extends AppCompatActivity {
+    ChildInfo info;
+    ArrayList<String> checkedCheckboxes;
+    String id;
+    // String[] Allergies = {"Milk","Soybeans","Egg","Wheat","Nuts","Fish"};
+    DatabaseReference Reference;
 
-    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +34,21 @@ public class AllergyTypeActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("child_info");
-        AllergyType allergyType = new AllergyType();
-        // When click on back button take the user back to the main screen
+        Reference = FirebaseDatabase.getInstance().getReference("child_info");
         ImageButton backButton = findViewById(R.id.backButton);
         Button saveButton = findViewById(R.id.actionButton);
-        CheckBox checkbox1 = findViewById(R.id.checkbox1);
-        CheckBox checkbox2 = findViewById(R.id.checkbox2);
-        CheckBox checkbox3 = findViewById(R.id.checkbox3);
-        CheckBox checkbox4 = findViewById(R.id.checkbox4);
-        CheckBox checkbox5 = findViewById(R.id.checkbox5);
-        CheckBox checkbox6 = findViewById(R.id.checkbox6);
+        CheckBox checkbox1 = findViewById(R.id.checkbox1); // Milk
+        CheckBox checkbox2 = findViewById(R.id.checkbox2); // Soybean
+        CheckBox checkbox3 = findViewById(R.id.checkbox3); // Egg
+        CheckBox checkbox4 = findViewById(R.id.checkbox4); // Wheat
+        CheckBox checkbox5 = findViewById(R.id.checkbox5); // Nuts
+        CheckBox checkbox6 = findViewById(R.id.checkbox6); // Fish
 
-        String v1 = "Milk";
-        String v2 = "Soybean";
-        String v3 = "Egg";
-        String v4 = "Wheat";
-        String v5 = "Nuts";
-        String v6 = "Fish";
-        reference.addValueEventListener(new ValueEventListener() {
+
+        id = Reference.push().getKey();
+        info = new ChildInfo(id, checkedCheckboxes);
+
+     /*   Reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -54,10 +57,32 @@ public class AllergyTypeActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError warn.png) {
 
             }
-        });
+        }); */
+
+
+        if (checkbox1.isChecked()){
+            checkedCheckboxes.add("Milk");
+        }
+        if (checkbox2.isChecked()){
+            checkedCheckboxes.add("Soybean");
+        }
+        if (checkbox3.isChecked()){
+            checkedCheckboxes.add("Egg");
+        }
+        if (checkbox4.isChecked()){
+            checkedCheckboxes.add("Wheat");
+        }
+        if (checkbox5.isChecked()){
+            checkedCheckboxes.add("Nuts");
+        }
+        if (checkbox6.isChecked()) {
+            checkedCheckboxes.add("Fish");
+        }
+
+        // checkedCheckboxes.addAll(Arrays.asList(Allergies));
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -69,37 +94,17 @@ public class AllergyTypeActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkbox1.isChecked()){
-                    allergyType.setAllergy1(v1);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
-                if (checkbox2.isChecked()){
-                    allergyType.setAllergy2(v2);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
-                if (checkbox3.isChecked()){
-                    allergyType.setAllergy3(v3);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
-                if (checkbox4.isChecked()){
-                    allergyType.setAllergy4(v4);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
-                if (checkbox5.isChecked()){
-                    allergyType.setAllergy5(v5);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
-                if (checkbox6.isChecked()){
-                    allergyType.setAllergy6(v6);
-                    reference.child(String.valueOf(i+1)).setValue(allergyType);
-                }
+                Reference.child(id).setValue(info);
+
+                // Reference.child(String.valueOf(i+1)).setValue(allergyType);
+
                 Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
     }
-    public void mainActivity() {
+    public void mainActivity(){
         Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);
     }

@@ -2,8 +2,11 @@ package com.example.faheemapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.fonts.Font;
 import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +15,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import com.chaos.view.PinView;
 
@@ -101,11 +106,16 @@ public class authenticationOTPActivity extends AppCompatActivity {
                         allergyTypeActivity();
 //                        FirebaseUser mCurrentUser = task.getResult().getUser();
                     } else {
-                        if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                        if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) { // The verification code entered was invalid
                             mOtpFeedback.setVisibility(View.VISIBLE);
-                            mOtpFeedback.setText("الرجاء ادخال رقم تحقق صالح مرسل إليك!");
-                            mOtpFeedback.setGravity(Gravity.CENTER);
-                            // The verification code entered was invalid
+                            mOtpFeedback.setText("رمز التحقق المدخل غير صحيح!");
+                            mOtpFeedback.setBackground(ContextCompat.getDrawable(authenticationOTPActivity.this, R.drawable.error_label));
+
+                            Drawable ErrorDrawable = ContextCompat.getDrawable(authenticationOTPActivity.this, R.drawable.error);
+                            ErrorDrawable.setBounds(0, 0, 90, 90);
+                            TextView errorLabel = findViewById(R.id.textView5);
+                            errorLabel.setCompoundDrawables(null, null, ErrorDrawable, null);
+
 
                         }
                     }

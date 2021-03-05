@@ -95,12 +95,13 @@
         app:srcCompat="?attr/homeAsUpIndicator"
         android:contentDescription="Back Button" />
 
+    <!-- We used PinView view design for the OTP pin -->
     <Button
         android:id="@+id/actionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="109dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="109dp"
         android:background="@drawable/action_button"
         android:fontFamily="@font/pnumedium"
@@ -112,12 +113,11 @@
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541" />
+        app:layout_constraintVertical_bias="0.528" />
 
-    <!-- We used PinView view design for the OTP pin -->
     <com.chaos.view.PinView
         android:id="@+id/OTP_Pin"
         style="@style/PinWidget.PinView"
@@ -146,19 +146,26 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="393dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:fontFamily="@font/pnubold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:fontFamily="@font/pnuregular"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="12dp"
         android:textAllCaps="true"
-        android:textColor="#FE7A7A"
-        android:textColorHighlight="#FE7A7A"
-        android:textColorLink="#FE7A7A"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/Error"
+        android:textColorLink="@color/Error"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionButton"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

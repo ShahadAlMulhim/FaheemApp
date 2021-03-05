@@ -7,26 +7,29 @@
     tools:context=".checkProductActivity"
     android:background="@color/Background">
 
-    <!-- <Button
+    <Button
         android:id="@+id/actionButton2"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="109dp"
-        android:layout_marginRight="109dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginLeft="166dp"
         android:background="@drawable/action_button"
         android:fontFamily="@font/pnumedium"
         android:hint="logout"
+        android:paddingLeft="10dp"
         android:paddingTop="5dp"
+        android:paddingRight="10dp"
         android:paddingBottom="5dp"
         android:text="تسجيل الخروج"
         android:textColor="@color/white"
-        android:textSize="26dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
- -->
+        app:layout_constraintVertical_bias="0.035" />
+
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
