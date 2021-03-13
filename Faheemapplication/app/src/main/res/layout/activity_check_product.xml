@@ -47,20 +47,6 @@
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="587dp"
-        android:layout_height="437dp"
-        android:layout_marginTop="400dp"
-        android:background="#F6FEFF"
-        android:tint="#65FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/land" />
-
-    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="273dp"
         android:layout_height="220dp"
@@ -68,7 +54,6 @@
         android:layout_marginLeft="390dp"
         android:layout_marginBottom="430dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cloud" />
@@ -115,5 +100,25 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="360dp" />
+
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_button"
+        android:fontFamily="@font/pnumedium"
+        android:hint="logout"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="ابدأ الآن"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

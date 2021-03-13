@@ -29,11 +29,11 @@ import java.util.ArrayList;
 public class checkProductActivity extends AppCompatActivity {
 
     Button actionButton;
+    Button scanBtn;
     private Button logout;
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
-    // ChildInfo info;
-    // DatabaseReference Reference;
+
 
 
 
@@ -48,13 +48,6 @@ public class checkProductActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
-
-        // Reference = FirebaseDatabase.getInstance().getReference("child_info");
-
-        // AllergyType allergyType = new AllergyType();
-        // String id = Reference.push().getKey();
-        // ArrayList<String> checkboxes= info.getCheckboxes();
-       // info = new ChildInfo(id, checkboxes);
 
 
 
@@ -75,8 +68,8 @@ public class checkProductActivity extends AppCompatActivity {
             }
         });
 
-        // scanBtn = findViewById(R.id.scanBtn);
-       // scanBtn.setOnClickListener(this::onClick);
+        scanBtn = findViewById(R.id.scanBtn);
+        scanBtn.setOnClickListener(this::onClick);
     }
 
     private void sendUserToMaikscreen(){
@@ -86,6 +79,7 @@ public class checkProductActivity extends AppCompatActivity {
         startActivity(AuthIntent);
         finish();
     }
+
 
     public void mainActivity() {
         Intent intent = new Intent(this, mainScreen.class);
@@ -113,8 +107,8 @@ public class checkProductActivity extends AppCompatActivity {
             int duration = Toast.LENGTH_SHORT;
             Toast.makeText(context, text, duration).show();
         }
-
     }
+
 
     @Override
     protected void onActivityResult(int reqCode, int resCode, Intent data) {
@@ -173,7 +167,7 @@ public class checkProductActivity extends AppCompatActivity {
                                         TextView textView = (TextView)findViewById(R.id.message);
                                         textView.setTextColor(Color.WHITE);
                                         textView.setBackgroundColor(Color.parseColor("#ffcc29"));
-                                        textView.setText("هذا المنتج غير متوفر لدينا");
+                                        textView.setText("لم نتمكن من التعرف على المنتج، جرب منتج آخر!");
 
                                         //Log.d("","the given barcode aint exit in our database"); // barcode not in the database
                                     }
@@ -199,4 +193,7 @@ public class checkProductActivity extends AppCompatActivity {
             Log.d("Exc ","you must sign in");
         }
     }
+
+
+
 }

@@ -47,7 +47,7 @@ public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
         startActivity(intent);
     }
     public void CaptureProduct(){
-        Intent intent = new Intent(this, CaptureAct.class);
+        Intent intent = new Intent(this, checkProductActivity.class);
         startActivity(intent);
     }
 }

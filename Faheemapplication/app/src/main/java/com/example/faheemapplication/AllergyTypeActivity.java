@@ -35,8 +35,6 @@ public class AllergyTypeActivity extends AppCompatActivity {
     ImageButton backButton;
     AllergyType typeOfAllergy;
     CheckBox checkbox1,checkbox2,checkbox3,checkbox4,checkbox5,checkbox6;
-    ArrayList<String> Allergies;
-    int i = 0;
 
 
     @Override
@@ -56,7 +54,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
 
 
         typeOfAllergy = new AllergyType();
-        id = Reference.push().getKey();
+        id = Reference.push().getKey(); // Generate unique key for the user 
 
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
