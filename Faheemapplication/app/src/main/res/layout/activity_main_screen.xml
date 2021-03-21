@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context=".mainScreen">
+    tools:context=".HomeScreen.mainScreen">
 
     <Button
         android:id="@+id/scanProduct"

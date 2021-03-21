@@ -1,38 +1,27 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.CheckProduct.Authentication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.graphics.fonts.Font;
-import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Selection;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskExecutors;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
+import com.example.faheemapplication.CheckProduct.AllergyType.AllergyTypeActivity;
+import com.example.faheemapplication.CheckProduct.AllergyType.checkProductActivity;
+import com.example.faheemapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 import com.chaos.view.PinView;
 
 
@@ -87,8 +76,8 @@ public class authenticationOTPActivity extends AppCompatActivity {
 
 
 
-        //Verification otpCode
-        //         String otp = String.valueOf(OTPCode);
+        // Verification otpCode
+        // String otp = String.valueOf(OTPCode);
         verifyButton.setOnClickListener(v -> {
             String newString = OTPCode.getText().toString();
             if(newString.isEmpty()){

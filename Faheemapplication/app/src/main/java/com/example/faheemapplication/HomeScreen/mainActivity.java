@@ -1,10 +1,12 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.HomeScreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.faheemapplication.R;
 
 public class mainActivity extends AppCompatActivity {
     private static int SPLASH_DELAY = 1700; // The time that the splash screen will take to disappear

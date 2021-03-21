@@ -1,4 +1,4 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.CheckProduct.AllergyType;
 
 public class AllergyType {
     private String Allergy1;
@@ -16,8 +16,6 @@ public class AllergyType {
         Allergy2 = allergy2;
         Allergy3 = allergy3;
         Allergy4 = allergy4;
-        Allergy5 = allergy5;
-        Allergy6 = allergy6;
     }
 
     public String getAllergy1() {
@@ -52,19 +50,4 @@ public class AllergyType {
         Allergy4 = allergy4;
     }
 
-    public String getAllergy5() {
-        return Allergy5;
-    }
-
-    public void setAllergy5(String allergy5) {
-        Allergy5 = allergy5;
-    }
-
-    public String getAllergy6() {
-        return Allergy6;
-    }
-
-    public void setAllergy6(String allergy6) {
-        Allergy6 = allergy6;
-    }
 }

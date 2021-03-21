@@ -23,17 +23,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FaheemApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GameActivity" android:screenOrientation="landscape"></activity>
-        <activity android:name=".StoryActivity" />
-        <activity android:name=".AllergyTypeActivityInfoSaved" />
+        <activity android:name=".Game.GameActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".Story.StoryActivity" />
+        <activity android:name=".CheckProduct.AllergyType.AllergyTypeActivityInfoSaved" />
         <activity
-            android:name=".checkProductActivity"
+            android:name=".CheckProduct.AllergyType.checkProductActivity"
             android:exported="true" />
-        <activity android:name=".AllergyTypeActivity" />
-        <activity android:name=".authenticationOTPActivity" />
-        <activity android:name=".authenticationActivity" />
-        <activity android:name=".mainScreen" />
-        <activity android:name=".mainActivity">
+        <activity android:name=".CheckProduct.AllergyType.AllergyTypeActivity" />
+        <activity android:name=".CheckProduct.Authentication.authenticationOTPActivity" />
+        <activity android:name=".CheckProduct.Authentication.authenticationActivity" />
+        <activity android:name=".HomeScreen.mainScreen" />
+        <activity android:name=".HomeScreen.mainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CaptureAct"
+            android:name=".CheckProduct.AllergyType.CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden" />

@@ -1,4 +1,4 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.HomeScreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -8,9 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
+import com.example.faheemapplication.Game.GameActivity;
+import com.example.faheemapplication.R;
+import com.example.faheemapplication.Story.StoryActivity;
+import com.example.faheemapplication.CheckProduct.Authentication.authenticationActivity;
+import com.example.faheemapplication.CheckProduct.AllergyType.checkProductActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class mainScreen extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -47,7 +55,11 @@ public class mainScreen extends AppCompatActivity {
 
 
 
-        ////
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        mCurrentUser = mAuth.getCurrentUser();
+
+
         // When click on "Scan product" button take the user to authentication activity
         scanProductButton.setOnClickListener(new View.OnClickListener() {
             @Override

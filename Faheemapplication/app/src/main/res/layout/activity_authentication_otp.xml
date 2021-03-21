@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authenticationOTPActivity"
+    tools:context=".CheckProduct.Authentication.authenticationOTPActivity"
     android:background="@color/Background" >
 
     <ImageView
@@ -95,7 +95,7 @@
         app:srcCompat="?attr/homeAsUpIndicator"
         android:contentDescription="Back Button" />
 
-    <!-- We used PinView view design for the OTP pin -->
+
     <Button
         android:id="@+id/actionButton"
         android:layout_width="0dp"
@@ -118,6 +118,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.528" />
 
+
+    <!-- We used PinView view design for the OTP pin -->
     <com.chaos.view.PinView
         android:id="@+id/OTP_Pin"
         style="@style/PinWidget.PinView"

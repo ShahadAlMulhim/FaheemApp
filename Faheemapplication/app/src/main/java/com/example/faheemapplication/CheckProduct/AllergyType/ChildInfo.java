@@ -1,5 +1,7 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.CheckProduct.AllergyType;
 
+
+import com.example.faheemapplication.CheckProduct.AllergyType.AllergyType;
 
 public class ChildInfo {
     String UserId;

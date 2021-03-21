@@ -1,4 +1,4 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.Game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.faheemapplication.HomeScreen.mainScreen;
+import com.example.faheemapplication.R;
 
 public class GameActivity extends AppCompatActivity {
 

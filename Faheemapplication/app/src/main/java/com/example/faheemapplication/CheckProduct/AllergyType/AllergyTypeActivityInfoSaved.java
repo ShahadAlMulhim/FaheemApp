@@ -1,14 +1,15 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.CheckProduct.AllergyType;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.example.faheemapplication.HomeScreen.mainScreen;
+import com.example.faheemapplication.R;
 
 public class AllergyTypeActivityInfoSaved extends AppCompatActivity {
 

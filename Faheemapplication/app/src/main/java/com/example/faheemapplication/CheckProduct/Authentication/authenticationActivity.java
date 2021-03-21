@@ -1,4 +1,4 @@
-package com.example.faheemapplication;
+package com.example.faheemapplication.CheckProduct.Authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,27 +7,22 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.faheemapplication.CheckProduct.AllergyType.AllergyTypeActivity;
+import com.example.faheemapplication.CheckProduct.AllergyType.checkProductActivity;
+import com.example.faheemapplication.HomeScreen.mainScreen;
+import com.example.faheemapplication.R;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
@@ -51,6 +46,7 @@ public class authenticationActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
+
         // Make the button disable and enable based on textEdit changes
         phoneInput = (EditText) findViewById(R.id.editTextPhone);
         CountryCode = (EditText) findViewById(R.id.editTextCode);
@@ -97,7 +93,7 @@ public class authenticationActivity extends AppCompatActivity {
                            mCallbacks
                    ); //send otp
 
-                    Intent otpIntent = new Intent(authenticationActivity.this,authenticationOTPActivity.class);
+                    Intent otpIntent = new Intent(authenticationActivity.this, authenticationOTPActivity.class);
                     startActivity(otpIntent);
                     finish();
                 }
@@ -151,13 +147,13 @@ public class authenticationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sendUSerToCheckproduct(){
+    /* public void sendUSerToCheckproduct(){
         Intent homeIntent = new Intent(authenticationActivity.this, checkProductActivity.class);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);
         finish();
-    }
+    } */
 
     public void allergyTypeActivity(){
         Intent intent = new Intent(this, AllergyTypeActivity.class);
@@ -178,5 +174,4 @@ public class authenticationActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }
