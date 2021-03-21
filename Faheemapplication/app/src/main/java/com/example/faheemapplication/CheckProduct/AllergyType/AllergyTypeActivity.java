@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 
 import com.example.faheemapplication.HomeScreen.mainScreen;
@@ -25,7 +23,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
     DatabaseReference Reference;
     Button saveButton;
     ImageButton backButton;
-    AllergyType typeOfAllergy;
+    AllergyType allergies;
     RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
 
 
@@ -45,30 +43,30 @@ public class AllergyTypeActivity extends AppCompatActivity {
 
 
 
-        typeOfAllergy = new AllergyType();
+        allergies = new AllergyType();
         id = Reference.push().getKey(); // Generate unique key for the user
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (RadioButton1.isChecked()){
-                   typeOfAllergy.setAllergy1("Milk");
-                   Reference.child(id).child("typeOfallergy").setValue(typeOfAllergy);
+                   allergies.setAllergy1("Milk");
+                   Reference.child(id).child("typeOfallergy").setValue(allergies);
                 }
                 if (RadioButton2.isChecked()){
-                    typeOfAllergy.setAllergy2("Wheat");
-                    Reference.child(id).child("typeOfallergy").setValue(typeOfAllergy);
+                    allergies.setAllergy2("Wheat");
+                    Reference.child(id).child("typeOfallergy").setValue(allergies);
                 }
                 if (RadioButton3.isChecked()){
-                    typeOfAllergy.setAllergy3("Egg");
-                    Reference.child(id).child("typeOfallergy").setValue(typeOfAllergy);
+                    allergies.setAllergy3("Egg");
+                    Reference.child(id).child("typeOfallergy").setValue(allergies);
                 }
                 if (RadioButton4.isChecked()){
-                    typeOfAllergy.setAllergy4("Nuts");
-                    Reference.child(id).child("typeOfallergy").setValue(typeOfAllergy);
+                    allergies.setAllergy4("Nuts");
+                    Reference.child(id).child("typeOfallergy").setValue(allergies);
                 }
 
-                info = new ChildInfo(id, typeOfAllergy);
+                info = new ChildInfo(id, allergies);
                 Reference.child(id).setValue(info);
 
 
