@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 import com.example.faheemapplication.HomeScreen.mainScreen;
@@ -28,8 +31,8 @@ public class AllergyTypeActivity extends AppCompatActivity {
     Button saveButton;
     ImageButton backButton;
     AllergyType typeOfAllergy;
-    RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
-    int i = 0;
+   // RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
+    RadioGroup RadioGrp;
 
 
     @Override
@@ -40,33 +43,25 @@ public class AllergyTypeActivity extends AppCompatActivity {
 
 
         Reference = FirebaseDatabase.getInstance().getReference("child_info");
+        RadioGrp = findViewById(R.id.RadioGroups);
         saveButton = findViewById(R.id.actionButton);
-        RadioButton1 = findViewById(R.id.RadioButton1); // Milk
+       /* RadioButton1 = findViewById(R.id.RadioButton1); // Milk
         RadioButton2 = findViewById(R.id.RadioButton2); // Wheat
         RadioButton3 = findViewById(R.id.RadioButton3); // Egg
         RadioButton4 = findViewById(R.id.RadioButton4); // Nuts
 
-        /* Reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    i = (int)snapshot.getChildrenCount();
-                }
-            }
+        */
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        }); */
-
-       typeOfAllergy = new AllergyType();
-        id = Reference.push().getKey(); // Generate unique key for the user
+       // typeOfAllergy = new AllergyType();
+       // id = Reference.push().getKey(); // Generate unique key for the user
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (RadioButton1.isChecked()){
+                ChildInfo();
+            }
+                /* if (RadioButton1.isChecked()){
                     typeOfAllergy.setAllergy1("Milk");
                     Reference.child(id).setValue(typeOfAllergy);
                 }
@@ -83,8 +78,8 @@ public class AllergyTypeActivity extends AppCompatActivity {
                     Reference.child(id).setValue(typeOfAllergy);
                 }
 
-                info = new ChildInfo(id, typeOfAllergy);
-                Reference.child(id).setValue(info);
+               // info = new ChildInfo(id, typeOfAllergy);
+                Reference.child(id).setValue(id);
 
 
                 Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
@@ -93,14 +88,28 @@ public class AllergyTypeActivity extends AppCompatActivity {
             }
         });
 
+
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
-            }
+            } */
         });
     }
+    private void ChildInfo(){
+        String Allergies = ((RadioButton)findViewById(RadioGrp.getCheckedRadioButtonId())).getText().toString();
+
+        if(!TextUtils.isEmpty(Allergies)){
+            id = Reference.push().getKey(); // Generate unique key for the user
+            info = new ChildInfo(id, Allergies); // for each user add unique id for them along with the selected allergy type
+            Reference.child(id).setValue(info);
+
+        }else{
+            Toast.makeText(this, "الرجاء اختيار احد الخيارات!" , Toast.LENGTH_LONG).show();
+        }
+    }
+
     public void mainActivity(){
         Intent intent = new Intent(this, mainScreen.class);
         startActivity(intent);

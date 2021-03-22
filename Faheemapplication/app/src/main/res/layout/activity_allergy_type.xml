@@ -105,7 +105,7 @@
         app:layout_constraintVertical_bias="0.08">
 
         <RadioButton
-            android:id="@+id/RadioButton1"
+            android:id="@+id/Milk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -124,7 +124,7 @@
             android:textSize="24dp" />
 
         <RadioButton
-            android:id="@+id/RadioButton2"
+            android:id="@+id/Wheat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -144,7 +144,7 @@
 
 
         <RadioButton
-            android:id="@+id/RadioButton3"
+            android:id="@+id/Egg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -163,7 +163,7 @@
             android:textSize="24dp" />
 
         <RadioButton
-            android:id="@+id/RadioButton4"
+            android:id="@+id/Nuts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

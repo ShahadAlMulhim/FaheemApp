@@ -39,6 +39,7 @@ public class authenticationOTPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_authentication_otp);
         getSupportActionBar().hide(); // Hide the action bar in the screen
 
+
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();

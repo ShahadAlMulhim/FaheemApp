@@ -3,10 +3,10 @@ package com.example.faheemapplication.CheckProduct.AllergyType;
 
 public class ChildInfo {
     String UserId;
-    AllergyType typeOfAllergy;
+    String typeOfAllergy;
 
 
-    public ChildInfo(String userId, AllergyType typeOfAllergy) {
+    public ChildInfo(String userId, String typeOfAllergy) {
         UserId = userId;
         this.typeOfAllergy = typeOfAllergy;
     }
@@ -21,11 +21,11 @@ public class ChildInfo {
         UserId = userId;
     }
 
-    public AllergyType gettypeOfAllergy() {
+    public String gettypeOfAllergy() {
         return typeOfAllergy;
     }
 
-    public void settypeOfAllergy(AllergyType typeOfAllergy) {
+    public void settypeOfAllergy(String typeOfAllergy) {
         this.typeOfAllergy = typeOfAllergy;
     }
 }
