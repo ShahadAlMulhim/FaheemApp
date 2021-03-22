@@ -1,15 +1,10 @@
 package com.example.faheemapplication.CheckProduct.AllergyType;
 
 
-import com.example.faheemapplication.CheckProduct.AllergyType.AllergyType;
-
 public class ChildInfo {
     String UserId;
     AllergyType typeOfAllergy;
 
-
-    public ChildInfo(){
-    }
 
     public ChildInfo(String userId, AllergyType typeOfAllergy) {
         UserId = userId;

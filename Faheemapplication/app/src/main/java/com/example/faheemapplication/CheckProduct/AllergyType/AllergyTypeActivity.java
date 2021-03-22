@@ -1,6 +1,7 @@
 package com.example.faheemapplication.CheckProduct.AllergyType;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,8 +14,11 @@ import android.widget.RadioButton;
 
 import com.example.faheemapplication.HomeScreen.mainScreen;
 import com.example.faheemapplication.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class AllergyTypeActivity extends AppCompatActivity {
@@ -23,8 +27,9 @@ public class AllergyTypeActivity extends AppCompatActivity {
     DatabaseReference Reference;
     Button saveButton;
     ImageButton backButton;
-    AllergyType allergies;
+    AllergyType typeOfAllergy;
     RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
+    int i = 0;
 
 
     @Override
@@ -41,32 +46,44 @@ public class AllergyTypeActivity extends AppCompatActivity {
         RadioButton3 = findViewById(R.id.RadioButton3); // Egg
         RadioButton4 = findViewById(R.id.RadioButton4); // Nuts
 
+        /* Reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    i = (int)snapshot.getChildrenCount();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        allergies = new AllergyType();
+            }
+        }); */
+
+       typeOfAllergy = new AllergyType();
         id = Reference.push().getKey(); // Generate unique key for the user
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (RadioButton1.isChecked()){
-                   allergies.setAllergy1("Milk");
-                   Reference.child(id).child("typeOfallergy").setValue(allergies);
+                    typeOfAllergy.setAllergy1("Milk");
+                    Reference.child(id).setValue(typeOfAllergy);
                 }
                 if (RadioButton2.isChecked()){
-                    allergies.setAllergy2("Wheat");
-                    Reference.child(id).child("typeOfallergy").setValue(allergies);
+                    typeOfAllergy.setAllergy2("Wheat");
+                    Reference.child(id).setValue(typeOfAllergy);
                 }
                 if (RadioButton3.isChecked()){
-                    allergies.setAllergy3("Egg");
-                    Reference.child(id).child("typeOfallergy").setValue(allergies);
+                    typeOfAllergy.setAllergy3("Egg");
+                    Reference.child(id).setValue(typeOfAllergy);
                 }
                 if (RadioButton4.isChecked()){
-                    allergies.setAllergy4("Nuts");
-                    Reference.child(id).child("typeOfallergy").setValue(allergies);
+                    typeOfAllergy.setAllergy4("Nuts");
+                    Reference.child(id).setValue(typeOfAllergy);
                 }
 
-                info = new ChildInfo(id, allergies);
+                info = new ChildInfo(id, typeOfAllergy);
                 Reference.child(id).setValue(info);
 
 

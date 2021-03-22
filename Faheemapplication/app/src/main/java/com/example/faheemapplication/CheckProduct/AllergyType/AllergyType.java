@@ -5,8 +5,6 @@ public class AllergyType {
     private String Allergy2;
     private String Allergy3;
     private String Allergy4;
-    private String Allergy5;
-    private String Allergy6;
 
     public AllergyType(){
     }
