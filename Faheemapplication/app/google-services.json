@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "279336275629-rmht7ss5f8dmdvds5altnpd2t7l4p5tb.apps.googleusercontent.com",
+          "client_id": "279336275629-1jfpnpnga5ivadmr4jhnf1ghc735i6e6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.faheemapplication",
-            "certificate_hash": "17be17486291eaf440455e47bb125b1bda028e9b"
+            "certificate_hash": "a60ba3c674abf0b5ecc2181a25d3a967710ce072"
           }
         },
         {

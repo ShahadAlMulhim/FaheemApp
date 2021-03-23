@@ -30,7 +30,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
     DatabaseReference Reference;
     Button saveButton;
     ImageButton backButton;
-    AllergyType typeOfAllergy;
+    // AllergyType typeOfAllergy;
    // RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
     RadioGroup RadioGrp;
 
@@ -61,6 +61,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ChildInfo();
             }
+        });
                 /* if (RadioButton1.isChecked()){
                     typeOfAllergy.setAllergy1("Milk");
                     Reference.child(id).setValue(typeOfAllergy);
@@ -87,6 +88,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
 
         backButton = findViewById(R.id.backButton);
@@ -94,20 +96,19 @@ public class AllergyTypeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mainActivity(); // call mainActivity function so when user click the button the mainActivity is opened
-            } */
+            }
         });
     }
     private void ChildInfo(){
-        String Allergies = ((RadioButton)findViewById(RadioGrp.getCheckedRadioButtonId())).getText().toString();
+        String Allergies = ((RadioButton)findViewById(RadioGrp.getCheckedRadioButtonId())).getHint().toString();
 
-        if(!TextUtils.isEmpty(Allergies)){
-            id = Reference.push().getKey(); // Generate unique key for the user
-            info = new ChildInfo(id, Allergies); // for each user add unique id for them along with the selected allergy type
-            Reference.child(id).setValue(info);
+        id = Reference.push().getKey(); // Generate unique key for the user
+        info = new ChildInfo(id, Allergies); // for each user add unique id for them along with the selected allergy type
+        Reference.child(id).setValue(info);
 
-        }else{
-            Toast.makeText(this, "الرجاء اختيار احد الخيارات!" , Toast.LENGTH_LONG).show();
-        }
+        Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public void mainActivity(){

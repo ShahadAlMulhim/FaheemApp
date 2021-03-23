@@ -116,6 +116,7 @@
             android:fontFamily="@font/pnuregular"
             android:paddingLeft="13dp"
             android:paddingTop="7dp"
+            android:hint="Milk"
             android:paddingRight="13dp"
             android:paddingBottom="7dp"
             android:text="الحليب"
@@ -138,6 +139,7 @@
             android:paddingRight="13dp"
             android:paddingBottom="7dp"
             android:text="القمح"
+            android:hint="Wheat"
             android:textAlignment="center"
             android:textColor="@color/Brown"
             android:textSize="24dp" />
@@ -158,6 +160,7 @@
             android:paddingRight="13dp"
             android:paddingBottom="7dp"
             android:text="البيض"
+            android:hint="Egg"
             android:textAlignment="center"
             android:textColor="@color/Brown"
             android:textSize="24dp" />
@@ -177,6 +180,7 @@
             android:paddingRight="13dp"
             android:paddingBottom="7dp"
             android:text="المكسرات"
+            android:hint="Nuts"
             android:textAlignment="center"
             android:textColor="@color/Brown"
             android:textSize="24dp" />

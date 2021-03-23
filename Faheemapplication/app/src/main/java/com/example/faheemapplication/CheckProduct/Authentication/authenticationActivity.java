@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,12 @@ import com.example.faheemapplication.CheckProduct.AllergyType.AllergyTypeActivit
 import com.example.faheemapplication.CheckProduct.AllergyType.checkProductActivity;
 import com.example.faheemapplication.HomeScreen.mainScreen;
 import com.example.faheemapplication.R;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -25,6 +32,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 
@@ -36,6 +44,9 @@ public class authenticationActivity extends AppCompatActivity {
    private EditText phoneInput;
    private EditText CountryCode;
    private Button actionButton;
+   // private static final String TAG = "Error!";
+   // private String API_KEY = "AIzaSyDwJ_edHpFIrrb3etCok1CfxMhZXyXhe-U";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +140,40 @@ public class authenticationActivity extends AppCompatActivity {
             }
         });
     }
+
+    /* public void onClick(View v) {
+        SafetyNet.getClient(this).verifyWithRecaptcha(API_KEY)
+                .addOnSuccessListener((Executor) this,
+                        new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                            @Override
+                            public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
+                                // Indicates communication with reCAPTCHA service was
+                                // successful.
+                                String userResponseToken = response.getTokenResult();
+                                if (!userResponseToken.isEmpty()) {
+                                    // Validate the user response token using the
+                                    // reCAPTCHA siteverify API.
+                                }
+                            }
+                        })
+                .addOnFailureListener((Executor) this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if (e instanceof ApiException) {
+                            // An error occurred when communicating with the
+                            // reCAPTCHA service. Refer to the status code to
+                            // handle the error appropriately.
+                            ApiException apiException = (ApiException) e;
+                            int statusCode = apiException.getStatusCode();
+                            Log.d(TAG, "Error: " + CommonStatusCodes
+                                    .getStatusCodeString(statusCode));
+                        } else {
+                            // A different, unknown type of error occurred.
+                            Log.d(TAG, "Error: " + e.getMessage());
+                        }
+                    }
+                });
+    } */
 
     @Override
     protected void onStart() {
