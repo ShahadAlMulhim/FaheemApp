@@ -30,8 +30,6 @@ public class AllergyTypeActivity extends AppCompatActivity {
     DatabaseReference Reference;
     Button saveButton;
     ImageButton backButton;
-    // AllergyType typeOfAllergy;
-   // RadioButton RadioButton1,RadioButton2,RadioButton3,RadioButton4;
     RadioGroup RadioGrp;
 
 
@@ -45,16 +43,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
         Reference = FirebaseDatabase.getInstance().getReference("child_info");
         RadioGrp = findViewById(R.id.RadioGroups);
         saveButton = findViewById(R.id.actionButton);
-       /* RadioButton1 = findViewById(R.id.RadioButton1); // Milk
-        RadioButton2 = findViewById(R.id.RadioButton2); // Wheat
-        RadioButton3 = findViewById(R.id.RadioButton3); // Egg
-        RadioButton4 = findViewById(R.id.RadioButton4); // Nuts
 
-        */
-
-
-       // typeOfAllergy = new AllergyType();
-       // id = Reference.push().getKey(); // Generate unique key for the user
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,33 +51,6 @@ public class AllergyTypeActivity extends AppCompatActivity {
                 ChildInfo();
             }
         });
-                /* if (RadioButton1.isChecked()){
-                    typeOfAllergy.setAllergy1("Milk");
-                    Reference.child(id).setValue(typeOfAllergy);
-                }
-                if (RadioButton2.isChecked()){
-                    typeOfAllergy.setAllergy2("Wheat");
-                    Reference.child(id).setValue(typeOfAllergy);
-                }
-                if (RadioButton3.isChecked()){
-                    typeOfAllergy.setAllergy3("Egg");
-                    Reference.child(id).setValue(typeOfAllergy);
-                }
-                if (RadioButton4.isChecked()){
-                    typeOfAllergy.setAllergy4("Nuts");
-                    Reference.child(id).setValue(typeOfAllergy);
-                }
-
-               // info = new ChildInfo(id, typeOfAllergy);
-                Reference.child(id).setValue(id);
-
-
-                Intent intent = new Intent(AllergyTypeActivity.this , AllergyTypeActivityInfoSaved.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        */
 
 
         backButton = findViewById(R.id.backButton);
@@ -99,6 +61,7 @@ public class AllergyTypeActivity extends AppCompatActivity {
             }
         });
     }
+
     private void ChildInfo(){
         String Allergies = ((RadioButton)findViewById(RadioGrp.getCheckedRadioButtonId())).getHint().toString();
 
