@@ -45,7 +45,7 @@ public class authenticationActivity extends AppCompatActivity {
    private EditText CountryCode;
    private Button actionButton;
    // private static final String TAG = "Error!";
-   // private String API_KEY = "AIzaSyDwJ_edHpFIrrb3etCok1CfxMhZXyXhe-U";
+  
 
 
     @Override
