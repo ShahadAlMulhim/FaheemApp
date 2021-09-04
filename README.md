@@ -9,4 +9,4 @@ Faheem took two semesters of work, the first semester was for the documentation 
 - **Main Role:** Android frontend development using Java, XML, and firebase to connect to our database.
 
 
-Note: this repository is only includes the android frontend part -the part I worked on- without the gaming and VR/AR development.
+**Note**: this repository is only includes the android frontend part -the part I worked on- without the gaming and VR/AR development.
