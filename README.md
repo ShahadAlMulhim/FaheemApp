@@ -2,7 +2,7 @@
 Faheem app is a graduation project that used gaming, storytelling, and target recognition techniques to support and educate children with food allergies. 
 
 Faheem took two semesters of work, the first semester was for the documentation part that introuduced the problem, propsed solotuin, system analysis, and system design. The second semester was for the implementation part for developing the application along with the VR/AR parts.
-
+#
 **In this project I worked on the following:**
 - The documentations (Collaborate on the research on the background information and related work, build up the problem and proposed solution, and system analysis) 
 - **Main Role:** UI/UX design of the application.
