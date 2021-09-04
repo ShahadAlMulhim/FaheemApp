@@ -1,4 +1,6 @@
 # FaheemApp
-Faheem app is a graduation project that continues for two semesters, the first semester includes the documentation part and the second semester the implementation part, and here we added the implementation part of the project. The idea of Faheem that it's a virtual And Augmented Reality-Based Educational And Emotional Support Game And Storytelling for Children With Dietary Needs And Food Allergies-App Section.
+Faheem app is a graduation project that used gaming, storytelling, and target recognition techniques to support and educate children with food allergies. 
+
+Faheem took two semesters of work, the first semester was for the documentation part that introuduced the problem, propsed solotuin, system analysis, and system design. The second semester was for the implementation part for developing the application along with the VR/AR parts.
 #
 The [UI design](https://www.figma.com/file/YJr5f8Fb7Vylqpnqhd3mPu/Application-UI?node-id=0%3A1) of the project.
